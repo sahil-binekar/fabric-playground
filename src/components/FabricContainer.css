@@ -1,0 +1,33 @@
+.container {
+    max-width: 1260px;
+    height: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+}
+.col1{
+    width: 30%;
+}
+.col2{
+    width: 70%;
+    
+}
+.toolbox{
+    height: 1004px;
+    width: 328px;
+    background-color: #9ef9fb;
+    border: #38c1ce;
+    border-radius: 10px;
+    border-style: solid;
+    
+}
+.playground{
+    width: 932px;
+    height: 1004px;
+    border: #38c1ce;
+    border-radius: 10px; 
+    border-style: solid;
+    border-width: 2px;
+}
+
