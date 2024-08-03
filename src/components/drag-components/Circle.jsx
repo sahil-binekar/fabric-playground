@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import * as fabric from 'fabric';
 import { useCanvasContext } from '../CanvasProvider';
-import img from '../../assets/img/square.png'
+import img from '../../assets/img/oval.png'
 
-function Rectangle() {
-  var rect = new fabric.Rect(
+function Circle() {
+  var circle = new fabric.Circle(
     {
+        radius: 30,
         left: 100,
         top: 100,
-        width: 50,
         fill: 'transparent',
         strokeWidth: 2,
         stroke: 'black',
@@ -18,11 +18,11 @@ function Rectangle() {
     }
   );
   const { canvas } = useCanvasContext();
-  const { setRect } = useCanvasContext();
+  const { setCircle } = useCanvasContext();
   
   const handleClick = (e) => {
-    canvas.add(rect);
-    setRect(rect);
+    canvas.add(circle);
+    setCircle(circle);
   }
 
   return (
@@ -30,4 +30,4 @@ function Rectangle() {
   )
 }
 
-export default Rectangle
+export default Circle

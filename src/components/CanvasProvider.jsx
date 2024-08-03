@@ -4,13 +4,18 @@ const CanvasContext = createContext(null);
 
 export const CanvasProvider = ({ children }) => {
   const [canvas, setCanvas] = useState(null);
+  const [text, setText] = useState();
+  const [rect, setRect] = useState();
+  const [circle, setCircle] = useState();
+  const [triangle, setTriangle] = useState();
+  const [brush, setBrush] = useState();
 
   const updateCanvasContext = (newCanvas) => {
     setCanvas(newCanvas);
   };
 
   return (
-    <CanvasContext.Provider value={{ canvas, updateCanvasContext }}>
+    <CanvasContext.Provider value={{ canvas, updateCanvasContext, text, setText, rect, setRect, circle, setCircle, triangle, setTriangle, brush, setBrush }}>
       {children}
     </CanvasContext.Provider>
   );

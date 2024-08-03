@@ -1,21 +1,19 @@
 import React, { useContext } from 'react'
 import * as fabric from 'fabric';
 import { useCanvasContext } from '../CanvasProvider';
-import img from '../../assets/img/text.png'
+import img from '../../assets/img/scribble.png'
 
-function TextBox() {
-  const text = new fabric.Text('Text Box', 
-    {
-      left: 100,
-      top: 100
-    }
-  );
+function Pencil() {
+  const brush = new fabric.PencilBrush();
   const { canvas } = useCanvasContext();
-  const { setText } = useCanvasContext();
+  brush.color = 'red';
+  brush.width = 4;
+  const { setBrush } = useCanvasContext();
   
   const handleClick = (e) => {
-    canvas.add(text);
-    setText(text);
+    canvas.isDrawingMode = true;
+    canvas.freeDrawingBrush = brush;
+    setBrush(brush);
     canvas.renderAll();
   }
 
@@ -24,4 +22,4 @@ function TextBox() {
   )
 }
 
-export default TextBox
+export default Pencil

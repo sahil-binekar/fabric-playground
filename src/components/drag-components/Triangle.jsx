@@ -1,28 +1,28 @@
 import React, { useContext } from 'react'
 import * as fabric from 'fabric';
 import { useCanvasContext } from '../CanvasProvider';
-import img from '../../assets/img/square.png'
+import img from '../../assets/img/triangle.png'
 
-function Rectangle() {
-  var rect = new fabric.Rect(
+function Triangle() {
+  var triangle = new fabric.Triangle(
     {
-        left: 100,
-        top: 100,
         width: 50,
+        height: 50,
+        left: 50,
+        top: 50,
         fill: 'transparent',
         strokeWidth: 2,
         stroke: 'black',
         strokeUniform: true,
-        height: 50,
         angle: 0
     }
   );
   const { canvas } = useCanvasContext();
-  const { setRect } = useCanvasContext();
+  const { setTriangle } = useCanvasContext();
   
   const handleClick = (e) => {
-    canvas.add(rect);
-    setRect(rect);
+    canvas.add(triangle);
+    setTriangle(triangle);
   }
 
   return (
@@ -30,4 +30,4 @@ function Rectangle() {
   )
 }
 
-export default Rectangle
+export default Triangle
