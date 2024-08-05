@@ -83,3 +83,7 @@
   .tooltip-content button:last-child {
     margin-bottom: 0;
   }
+
+  .uploaded-img{
+    margin: 10px;
+  }

@@ -9,13 +9,14 @@ export const CanvasProvider = ({ children }) => {
   const [circle, setCircle] = useState();
   const [triangle, setTriangle] = useState();
   const [brush, setBrush] = useState();
+  const [image, setImage] = useState([]);
 
   const updateCanvasContext = (newCanvas) => {
     setCanvas(newCanvas);
   };
 
   return (
-    <CanvasContext.Provider value={{ canvas, updateCanvasContext, text, setText, rect, setRect, circle, setCircle, triangle, setTriangle, brush, setBrush }}>
+    <CanvasContext.Provider value={{ canvas, updateCanvasContext, text, setText, rect, setRect, circle, setCircle, triangle, setTriangle, brush, setBrush, image, setImage }}>
       {children}
     </CanvasContext.Provider>
   );

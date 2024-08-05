@@ -7,7 +7,7 @@ function FabricCanvas() {
   const { updateCanvasContext } = useCanvasContext();
 
   useEffect(() => {
-    const canvas = new fabric.Canvas(canvasEl.current);
+    const canvas = new fabric.Canvas(canvasEl.current, { isDrawingMode: false, freeDrawingBrush: '' } );
 
     updateCanvasContext(canvas);
     return () => {

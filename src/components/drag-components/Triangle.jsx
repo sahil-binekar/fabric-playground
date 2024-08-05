@@ -8,8 +8,8 @@ function Triangle() {
     {
         width: 50,
         height: 50,
-        left: 50,
-        top: 50,
+        left: 100,
+        top: 100,
         fill: 'transparent',
         strokeWidth: 2,
         stroke: 'black',

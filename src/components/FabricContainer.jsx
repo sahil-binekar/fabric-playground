@@ -1,17 +1,18 @@
 import { Container, Row, Col } from "react-bootstrap"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover'
-import Button from 'react-bootstrap/Button';
-import React, { useState } from 'react';
+import React from 'react';
+import * as fabric from 'fabric';
 import './FabricContainer.css'
 import FabricCanvas from "./FabricCanvas"
 import TextBox from "./drag-components/TextBox";
 import Rectangle from "./drag-components/Rectangle";
 import Circle from "./drag-components/Circle";
 import Triangle from "./drag-components/Triangle";
-// import Pencil from "./drag-components/Pencil";
 import shape from '../assets/img/shapes.png'
 import { useCanvasContext } from './CanvasProvider';
+import FileUpload from "./FileUpload";
+import scribble from "../assets/img/scribble.png"
 
 function FabricContainer() {
   const popoverClick = (
@@ -22,6 +23,21 @@ function FabricContainer() {
     </Popover>
   );
 
+  const { canvas } = useCanvasContext();
+
+  const toggelCanvas = () =>{
+    if (canvas.isDrawingMode == true) {
+      canvas.isDrawingMode = false;
+    }
+    else {
+      canvas.isDrawingMode = true;
+      canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
+      canvas.freeDrawingBrush.width = 4;
+      canvas.freeDrawingBrush.color = "purple";
+    }
+    // while adding the controll panel pass the whole property hash to the canvas while changing any of the setting
+  }
+
   return (
     <Container>
     <Row>
@@ -31,6 +47,8 @@ function FabricContainer() {
           <OverlayTrigger trigger="click" rootClose placement="right" overlay={popoverClick}>
             <img className="icon" src={shape} width="30" height="30" ></img>
           </OverlayTrigger>
+          <FileUpload />
+          <img className="icon" src={scribble} onClick={toggelCanvas} width="30" height="30" />
         </div>
       </Col>
       <Col className="col2">
