@@ -6,7 +6,7 @@ import img from '../../assets/img/oval.png'
 function Circle() {
   var circle = new fabric.Circle(
     {
-        radius: 30,
+        radius: 25,
         left: 100,
         top: 100,
         fill: 'transparent',
@@ -14,7 +14,7 @@ function Circle() {
         stroke: 'black',
         strokeUniform: true,
         height: 50,
-        angle: 0
+        width: 50,
     }
   );
   const { canvas } = useCanvasContext();

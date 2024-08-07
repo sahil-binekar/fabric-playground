@@ -7,7 +7,7 @@ function FabricCanvas() {
   const { updateCanvasContext } = useCanvasContext();
 
   useEffect(() => {
-    const canvas = new fabric.Canvas(canvasEl.current, { isDrawingMode: false, freeDrawingBrush: '' } );
+    const canvas = new fabric.Canvas(canvasEl.current, { isDrawingMode: false } );
 
     updateCanvasContext(canvas);
     return () => {
@@ -16,7 +16,7 @@ function FabricCanvas() {
     }
   }, []);
 
-  return <canvas width="928" height="1000" ref={canvasEl}/>;
+  return <canvas width="930" height="1002" ref={canvasEl}/>;
 }
 
 export default FabricCanvas;

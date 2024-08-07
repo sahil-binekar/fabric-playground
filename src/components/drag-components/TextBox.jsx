@@ -4,7 +4,7 @@ import { useCanvasContext } from '../CanvasProvider';
 import img from '../../assets/img/text.png'
 
 function TextBox() {
-  const text = new fabric.Text('Text Box', 
+  const text = new fabric.Textbox('Text Box',
     {
       left: 100,
       top: 100

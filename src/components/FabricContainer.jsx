@@ -13,6 +13,7 @@ import shape from '../assets/img/shapes.png'
 import { useCanvasContext } from './CanvasProvider';
 import FileUpload from "./FileUpload";
 import scribble from "../assets/img/scribble.png"
+import downld from "../assets/img/download.png"
 
 function FabricContainer() {
   const popoverClick = (
@@ -38,6 +39,15 @@ function FabricContainer() {
     // while adding the controll panel pass the whole property hash to the canvas while changing any of the setting
   }
 
+  const downloadCanvas = (e) => {
+    const dataURL = canvas.toDataURL("image/jpeg");
+    var a = document.createElement("a");
+    a.href =  dataURL
+    a.download = "canvas.jpeg";
+    a.click();
+    // console.log(dataURL);
+  }
+
   return (
     <Container>
     <Row>
@@ -49,6 +59,7 @@ function FabricContainer() {
           </OverlayTrigger>
           <FileUpload />
           <img className="icon" src={scribble} onClick={toggelCanvas} width="30" height="30" />
+          <img className="icon" src={downld} onClick={downloadCanvas} width="30" height="30" />
         </div>
       </Col>
       <Col className="col2">
