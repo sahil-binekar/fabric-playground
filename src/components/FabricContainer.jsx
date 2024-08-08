@@ -14,6 +14,7 @@ import { useCanvasContext } from './CanvasProvider';
 import FileUpload from "./FileUpload";
 import scribble from "../assets/img/scribble.png"
 import downld from "../assets/img/download.png"
+import ToolTip from './ToolTip';
 
 function FabricContainer() {
   const popoverClick = (
@@ -45,7 +46,6 @@ function FabricContainer() {
     a.href =  dataURL
     a.download = "canvas.jpeg";
     a.click();
-    // console.log(dataURL);
   }
 
   return (
@@ -58,8 +58,12 @@ function FabricContainer() {
             <img className="icon" src={shape} width="30" height="30" ></img>
           </OverlayTrigger>
           <FileUpload />
-          <img className="icon" src={scribble} onClick={toggelCanvas} width="30" height="30" />
-          <img className="icon" src={downld} onClick={downloadCanvas} width="30" height="30" />
+          <ToolTip title="Draw">
+            <img className="icon" src={scribble} onClick={toggelCanvas} width="30" height="30" />
+          </ToolTip>
+          <ToolTip title="Download">
+            <img className="icon" src={downld} onClick={downloadCanvas} width="30" height="30" />
+          </ToolTip>
         </div>
       </Col>
       <Col className="col2">

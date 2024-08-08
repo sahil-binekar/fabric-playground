@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import * as fabric from 'fabric';
 import { useCanvasContext } from '../CanvasProvider';
 import img from '../../assets/img/text.png'
+import ToolTip from '../ToolTip';
 
 function TextBox() {
   const text = new fabric.Textbox('Text Box',
@@ -20,7 +21,9 @@ function TextBox() {
   }
 
   return (
-    <img className="icon" onClick={handleClick} src={img} width="30" height="30" ></img>
+    <ToolTip title="Add Text">
+      <img className="icon" onClick={handleClick} src={img} width="30" height="30" />
+    </ToolTip>
   )
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useContext, useRef } from 'react'
 import * as fabric from 'fabric';
 import img from '../assets/img/paper-clip.png'
 import { useCanvasContext } from './CanvasProvider';
+import ToolTip from './ToolTip';
 
 function FileUpload() {
   const { canvas } = useCanvasContext();
@@ -41,7 +42,9 @@ function FileUpload() {
         onChange={imgFilehandler}
         style={{ display: 'none' }}
       />
-      <img className="icon" onClick={handleIconClick} src={img} width="30" height="30" />
+      <ToolTip title="Upload Image">
+        <img className="icon" onClick={handleIconClick} src={img} width="30" height="30" />
+      </ToolTip>
       {file ? <img id='uploaded-img' onClick={setToCanvas} src={file} width="30" height="30" /> : "" }
     </div>
   )
